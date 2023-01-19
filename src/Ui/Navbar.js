@@ -17,17 +17,16 @@ export default makeStyles(() => ({
   },
   search_container: {
     display: 'flex ',
-    flexDirection: 'row',
     alignItems: 'center',
-    padding: '0 0 0 1em',
     backgroundColor: '#1976d2',
     height: '90%',
     width: '40%',
     border: '1.5px solid #05417e',
+    zIndex: 100,
     borderRadius: '5px',
     '& input': {
       color: 'white',
-      padding: '5px',
+      padding: '0 10px',
       background: 'none',
       border: 0,
       height: '90%',
@@ -35,12 +34,12 @@ export default makeStyles(() => ({
       '&::placeholder': {
         color: 'white',
       },
-      '&:focus': {
-        border: '0 !important',
-      },
-      '&:active': {
-        border: '0 !important',
-      },
+    },
+    '& button': {
+      borderLeft: '1.5px solid #05417e',
+      border: 0,
+      height: '100%',
+      backgroundColor: '#1976d2',
     },
   },
 }));

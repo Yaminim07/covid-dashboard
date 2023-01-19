@@ -19,8 +19,10 @@ function Navbar() {
         </Typography>
       </div>
       <div className={classes.search_container}>
-        <SearchIcon />
         <input placeholder="Search By Country..." />
+        <button type="button">
+          <SearchIcon />
+        </button>
       </div>
 
     </AppBar>
