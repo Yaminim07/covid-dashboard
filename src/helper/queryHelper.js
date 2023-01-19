@@ -12,4 +12,8 @@ const fetchData = (query) => async () => graphQLClient.request(gql`${query}`);
 
 export const fetchAllCountry = (query) => async () => graphQLClient.request(gql`${query}`);
 
+export const fetchCountry = (query) => async () => {
+  graphQLClient.request(gql`${query}`, JSON.stringify('india'));
+}
+
 export default fetchData;

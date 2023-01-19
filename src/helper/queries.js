@@ -20,7 +20,7 @@ const GLOBAL_DATA_QUERY = `{
     }
 }`;
 
-const COUNTRY_DATA_QUERY = `{
+const ALL_COUNTRY_DATA_QUERY = `{
     countries {
         country
         countryInfo {
@@ -44,8 +44,41 @@ const COUNTRY_DATA_QUERY = `{
             critical
         }
     } 
-}`
+}`;
+
+const COUNTRY_DATA_QUERY = `{
+
+        country(name, filterBy: yesterday) {
+        country
+            countryInfo {
+                _id
+                long
+                flag
+                iso2
+                iso3
+            }
+            continent
+            result {
+                population
+                tests
+                cases
+                todayCases
+                deaths
+                todayDeaths
+                recovered
+                active
+                critical
+                casesPerOneMillion
+                deathsPerOneMillion
+                testsPerOneMillion
+                activePerOneMillion
+                recoveredPerOneMillion
+                criticalPerOneMillion
+                updated
+            }
+    
+}`;
 
 // Once more queries are added, remove the eslint disable text
 // eslint-disable-next-line import/prefer-default-export
-export { GLOBAL_DATA_QUERY, COUNTRY_DATA_QUERY };
+export { GLOBAL_DATA_QUERY, COUNTRY_DATA_QUERY, ALL_COUNTRY_DATA_QUERY };

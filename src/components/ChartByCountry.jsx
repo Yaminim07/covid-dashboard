@@ -2,17 +2,17 @@ import React from 'react'
 import { useQuery } from 'react-query';
 
 import { COUNTRY_DATA_QUERY } from '../helper/queries';
-import { fetchAllCountry } from '../helper/queryHelper';
+import { fetchCountry } from '../helper/queryHelper';
 import DataCard from './DataCard';
 import useStyles from '../Ui/ChartByCountry';
 
 function ChartByCountry() {
-  const { data, isSuccess } = useQuery('country-data', fetchAllCountry(COUNTRY_DATA_QUERY), { staleTime: 86400000 });
-  console.log(data?.countries);
+  const { data, isSuccess } = useQuery('country-data', fetchCountry(COUNTRY_DATA_QUERY), { staleTime: 86400000 });
 
   const classes = useStyles();
 
   if (isSuccess) {
+    console.log(data);
     return (
       <div>
         <DataCard
