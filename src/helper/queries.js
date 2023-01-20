@@ -22,7 +22,7 @@ const GLOBAL_DATA_QUERY = `{
     }
 }`;
 const COUNTRY_DATA_QUERY = `{
-    countries {
+    countries(sortBy: cases) {
         country
         countryInfo {
             _id
@@ -43,9 +43,16 @@ const COUNTRY_DATA_QUERY = `{
             recovered
             active
             critical
+            casesPerOneMillion
+            deathsPerOneMillion
+            testsPerOneMillion
+            activePerOneMillion
+            recoveredPerOneMillion
+            criticalPerOneMillion
+            updated
         }
-    } 
-}`
+    }
+}`;
 
 const ALL_COUNTRY_DATA_QUERY = `{
     countries {

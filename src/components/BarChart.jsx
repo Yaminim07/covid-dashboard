@@ -17,8 +17,7 @@ function BarChart({ passData }) {
                 size: 17
             }
         }
-      },
-      
+      }, 
   },
     scales: {
       y: {
@@ -27,12 +26,12 @@ function BarChart({ passData }) {
           size: 10
        }
       },
-      
-    }
+    },
+    maintainAspectRatio: false
   };
   return (
     <div className={classes.bar_chart}>
-      <Bar data= {passData} options={options}/>
+      <Bar data= {passData} options={options} width={"100%"}/>
     </div>
   )
 }

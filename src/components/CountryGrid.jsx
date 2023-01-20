@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
 import {
   TextField, Box, AppBar, Toolbar, Typography, InputAdornment, Avatar,
@@ -8,13 +7,14 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { AgGridReact } from 'ag-grid-react';
 import { useQuery } from 'react-query';
-import { fetchData } from '../helper/queryHelper';
+import fetchData from '../helper/queryHelper';
 import { COUNTRY_DATA_QUERY } from '../helper/queries';
+import useStyles from '../Ui/CountryGrid';
 
 const flagImage = (params) => (<Avatar src={params.value} variant="rounded" className="flag" />)
 function CountryGrid() {
+  const classes = useStyles();
   const [gridApi, setGridApi] = useState(null);
-  // const [gridColumnApi, setGridColumnApi] = useState(null);
   const [rowData, setRowData] = useState([{}]);
   const [columnDefs] = useState([
     {
@@ -62,7 +62,6 @@ function CountryGrid() {
   const onGridReady = (params) => {
     setGridApi(params.api);
     params.api.sizeColumnsToFit();
-    // setGridColumnApi(params.columnApi)
   };
 
   // access API from callback params object
@@ -74,11 +73,11 @@ function CountryGrid() {
     <div
       className="ag-theme-alpine"
     >
-      <Box>
+      <Box className={classes.gridHeader}>
         <AppBar position="relative" color="primary">
           <Toolbar className="appBarToolBar">
             <Typography variant="h6">
-              Covid Data Of All Countries
+              All country data sort by cases
             </Typography>
             <TextField
               InputProps={{
@@ -96,12 +95,14 @@ function CountryGrid() {
           </Toolbar>
         </AppBar>
       </Box>
-      <AgGridReact
-        columnDefs={columnDefs}
-        rowData={rowData}
-        onGridReady={onGridReady}
-        sendToClipboard={sendToClipboard}
-      />
+      <Box className={classes.gridBody}>
+        <AgGridReact
+          columnDefs={columnDefs}
+          rowData={rowData}
+          onGridReady={onGridReady}
+          sendToClipboard={sendToClipboard}
+        />
+      </Box>
     </div>
   );
 }
