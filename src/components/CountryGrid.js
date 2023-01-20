@@ -1,35 +1,30 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
 import {
-  TextField, Box, AppBar, Toolbar, Typography, InputAdornment,
+  TextField, Box, AppBar, Toolbar, Typography, InputAdornment, Avatar,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-// import { makeStyles } from '@mui/styles';
 import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-material.css';
+import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { AgGridReact } from 'ag-grid-react';
 import { useQuery } from 'react-query';
 import { fetchData } from '../helper/queryHelper';
-
 import { COUNTRY_DATA_QUERY } from '../helper/queries';
 
-// const useStyles = makeStyles({
-//   root: {
-//     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-//     border: 0,
-//     borderRadius: 3,
-//     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-//     color: 'white',
-//     height: 48,
-//     padding: '0 30px',
-//   },
-// });
+const flagImage = (params) => (<Avatar src={params.value} variant="rounded" className="flag" />)
 function CountryGrid() {
   const [gridApi, setGridApi] = useState(null);
   // const [gridColumnApi, setGridColumnApi] = useState(null);
   const [rowData, setRowData] = useState([{}]);
   const [columnDefs] = useState([
-    { field: 'country', resizable: 'true', cellRenderer: (flag) => `<img style="height: 14px; width: 14px" src=${flag} />` },
+    {
+      field: 'country',
+      resizable: 'true',
+    },
+    {
+      field: 'flag',
+      cellRenderer: flagImage,
+    },
     { field: 'continent' },
     { field: 'population' },
     { field: 'tests' },
@@ -45,7 +40,6 @@ function CountryGrid() {
   );
   const updateData = () => {
     if (isSuccess) {
-      console.log(typeof (data.countries[0].countryInfo.flag));
       const rows = data.countries.map((element) => ({
         flag: element?.countryInfo?.flag,
         country: element?.country,
@@ -78,16 +72,11 @@ function CountryGrid() {
   };
   return (
     <div
-      className="ag-theme-material"
-      style={{
-        height: '400px',
-        width: '80%',
-        margin: 'auto',
-      }}
+      className="ag-theme-alpine"
     >
       <Box>
         <AppBar position="relative" color="primary">
-          <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Toolbar className="appBarToolBar">
             <Typography variant="h6">
               Covid Data Of All Countries
             </Typography>
@@ -99,7 +88,7 @@ function CountryGrid() {
                   </InputAdornment>
                 ),
               }}
-              style={{ backgroundColor: 'white', borderRadius: '4px' }}
+              className="textField"
               size="small"
               placeholder="Search"
               onChange={onFilterTextChange}
