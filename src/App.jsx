@@ -20,11 +20,11 @@ function App() {
     <div className="App">
       <Navbar />
       <GlobalData />
-      <Grid container>
-        <Grid xs={5} className={classes.bodyContainer}>
+      <Grid container className={classes.mainContainer}>
+        <Grid xs={12} lg={5} md={12} className={classes.bodyContainer}>
           <ChartByCountry />
         </Grid>
-        <Grid xs={7} className={classes.bodyContainer}>
+        <Grid xs={12} lg={7} md={12} className={classes.bodyContainer}>
           <CountryGrid />
         </Grid>
       </Grid>
