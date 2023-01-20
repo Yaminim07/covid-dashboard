@@ -1,26 +1,45 @@
 import React from 'react'
 import { useQuery } from 'react-query';
 
-import { COUNTRY_DATA_QUERY } from '../helper/queries';
-import { fetchCountry } from '../helper/queryHelper';
-import DataCard from './DataCard';
-import useStyles from '../Ui/ChartByCountry';
+import { GET_COUNTRY } from '../helper/queries';
+import fetchData from '../helper/queryHelper';
+import BarChart from './BarChart';
+import useStyles, { backgroundColorArr, borderColorArr } from '../Ui/ChartByCountry';
 
 function ChartByCountry() {
-  const { data, isSuccess } = useQuery('country-data', fetchCountry(COUNTRY_DATA_QUERY), { staleTime: 86400000 });
+  const { data, isSuccess } = useQuery('country-data', fetchData(GET_COUNTRY, { code: 'india' }), { staleTime: 86400000 });
 
   const classes = useStyles();
 
   if (isSuccess) {
-    console.log(data);
+    const rs = data.country.result;
+
+    const tableOne = {
+      labels: ['population', 'tests', 'cases', 'recovered', 'deaths'],
+      datasets: [{
+        label: 'india',
+        data: [rs.population, rs.tests, rs.cases, rs.recovered, rs.deaths],
+        backgroundColor: backgroundColorArr,
+        borderColor: borderColorArr,
+        borderWidth: 1,
+      }],
+    }
+
+    const tableTwo = {
+      labels: ['Active', 'Critical', 'Today\'s cases'],
+      datasets: [{
+        label: 'india',
+        data: [rs.active, rs.critical, rs.todayCases],
+        backgroundColor: backgroundColorArr,
+        borderColor: borderColorArr,
+        borderWidth: 1,
+      }],
+    }
+
     return (
-      <div>
-        <DataCard
-          className={classes.total_data_card}
-          title="Total Deaths"
-          numericData={data?.globalTotal?.deaths}
-          textColor="red"
-        />
+      <div className={classes.chart_container}>
+        <BarChart passData={tableOne} />
+        <BarChart passData={tableTwo} />
       </div>
     )
   }

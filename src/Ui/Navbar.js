@@ -7,7 +7,8 @@ export default makeStyles(() => ({
     alignItems: 'center !important',
     padding: '5px 0px !important',
     justifyContent: 'space-around !important',
-    height: '60px',
+    height: '90px',
+    backgroundColor: '#1976d2 !important',
   },
   logo: {
     display: 'flex ',
@@ -29,17 +30,23 @@ export default makeStyles(() => ({
       padding: '0 10px',
       background: 'none',
       border: 0,
-      height: '90%',
+      height: '100%',
       width: '100%',
+      fontSize: '17px',
       '&::placeholder': {
         color: 'white',
+      },
+      '&:focus': {
+        border: 0,
       },
     },
     '& button': {
       borderLeft: '1.5px solid #05417e',
       border: 0,
       height: '100%',
+      width: '70px',
       backgroundColor: '#1976d2',
+      cursor: 'pointer',
     },
   },
 }));

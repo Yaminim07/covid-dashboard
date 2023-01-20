@@ -8,12 +8,8 @@ const graphQLClient = new GraphQLClient(API_ENDPOINT, {
   },
 });
 
-const fetchData = (query) => async () => graphQLClient.request(gql`${query}`);
+const fetchData = (query, variables = {}, cfg = {}) => async () => graphQLClient.request(gql`${query}`, { ...variables }, { ...cfg });
 
 export const fetchAllCountry = (query) => async () => graphQLClient.request(gql`${query}`);
-
-export const fetchCountry = (query) => async () => {
-  graphQLClient.request(gql`${query}`, JSON.stringify('india'));
-}
 
 export default fetchData;

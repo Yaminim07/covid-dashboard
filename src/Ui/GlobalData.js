@@ -1,11 +1,21 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
+  wrapper: {
+    textAlign: 'center',
+    height: '150px',
+    backgroundColor: '#ff9f4033',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
+  title: {
+    margin: 0,
+    fontWeight: '400',
+  },
   data_container: {
     display: 'flex',
-    padding: '15px 0',
     alignItems: 'center',
-    backgroundColor: '#E8E9E9',
   },
   total_data_card: {
     width: '100%',

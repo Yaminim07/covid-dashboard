@@ -16,26 +16,29 @@ function GlobalData() {
 
   if (isSuccess) {
     return (
-      <Box className={classes.data_container}>
-        <DataCard
-          title="Active Cases"
-          numericData={data?.globalTotal?.active}
-          iconElement={<CoronavirusIcon />}
-          className={classes.total_data_card}
-        />
-        <DataCard
-          className={classes.total_data_card}
-          title="Total Deaths"
-          numericData={data?.globalTotal?.deaths}
-          iconElement={<CoronavirusIcon sx={{ color: 'red' }} />}
-          textColor="red"
-        />
-        <DataCard
-          className={classes.total_data_card}
-          title="Recovered"
-          numericData={data?.globalTotal?.recovered}
-          iconElement={<PeopleIcon sx={{ color: 'green' }} />}
-        />
+      <Box className={classes.wrapper}>
+        <h2 className={classes.title}>Global Data</h2>
+        <Box className={classes.data_container}>
+          <DataCard
+            title="Active Cases"
+            numericData={data?.globalTotal?.active}
+            iconElement={<CoronavirusIcon />}
+            className={classes.total_data_card}
+          />
+          <DataCard
+            className={classes.total_data_card}
+            title="Total Deaths"
+            numericData={data?.globalTotal?.deaths}
+            iconElement={<CoronavirusIcon sx={{ color: 'red' }} />}
+            textColor="red"
+          />
+          <DataCard
+            className={classes.total_data_card}
+            title="Recovered"
+            numericData={data?.globalTotal?.recovered}
+            iconElement={<PeopleIcon sx={{ color: 'green' }} />}
+          />
+        </Box>
       </Box>
     )
   }
