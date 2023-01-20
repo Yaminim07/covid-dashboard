@@ -1,3 +1,5 @@
+import { gql } from 'graphql-request';
+
 const GLOBAL_DATA_QUERY = `{
     globalTotal {
         affectedCountries
@@ -45,6 +47,54 @@ const COUNTRY_DATA_QUERY = `{
     } 
 }`
 
-// Once more queries are added, remove the eslint disable text
-// eslint-disable-next-line import/prefer-default-export
-export { GLOBAL_DATA_QUERY, COUNTRY_DATA_QUERY };
+const ALL_COUNTRY_DATA_QUERY = `{
+    countries {
+        country
+        countryInfo {
+            _id
+            lat
+            long
+            flag
+            iso3
+            iso2
+        }
+        continent
+        result {
+            population
+            tests
+            cases
+            todayCases
+            deaths
+            todayDeaths
+            recovered
+            active
+            critical
+        }
+    } 
+}`;
+
+const GET_COUNTRY = gql`
+query country($code: String!){
+    country(name: $code, filterBy: yesterday) {
+        country
+        countryInfo {
+            flag
+        }
+        continent
+        result {
+            population
+            tests
+            cases
+            todayCases
+            deaths
+            todayDeaths
+            recovered
+            active
+            critical
+        }
+    }
+}
+`
+export {
+  GLOBAL_DATA_QUERY, COUNTRY_DATA_QUERY, ALL_COUNTRY_DATA_QUERY, GET_COUNTRY,
+};
