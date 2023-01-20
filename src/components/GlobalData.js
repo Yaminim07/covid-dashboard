@@ -6,7 +6,6 @@ import PeopleIcon from '@mui/icons-material/People';
 import { fetchData } from '../helper/queryHelper';
 import { GLOBAL_DATA_QUERY } from '../helper/queries';
 import DataCard from './DataCard';
-import CountryGrid from './CountryGrid';
 
 function GlobalData() {
   const { data, isSuccess } = useQuery('global-data', fetchData(GLOBAL_DATA_QUERY));
@@ -31,9 +30,6 @@ function GlobalData() {
             numericData={data?.globalTotal?.recovered}
             iconElement={<PeopleIcon sx={{ color: 'green' }} />}
           />
-        </Box>
-        <Box>
-          <CountryGrid />
         </Box>
       </Box>
     )
