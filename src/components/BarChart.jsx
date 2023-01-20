@@ -2,8 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJs } from 'chart.js/auto'; 
-
+import chart from 'chart.js';
 import useStyles from '../Ui/ChartByCountry';
 
 function BarChart({ passData }) {
@@ -17,7 +16,7 @@ function BarChart({ passData }) {
                 size: 17
             }
         }
-      }, 
+      },
   },
     scales: {
       y: {
