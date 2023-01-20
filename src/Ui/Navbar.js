@@ -2,12 +2,13 @@ import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
   app_bar: {
+    width: '100vw',
     display: 'flex !important',
     flexDirection: 'row !important',
     alignItems: 'center !important',
     padding: '5px 0px !important',
     justifyContent: 'space-around !important',
-    height: '90px',
+    height: '50px',
     backgroundColor: '#1976d2 !important',
   },
   logo: {
@@ -21,7 +22,7 @@ export default makeStyles(() => ({
     alignItems: 'center',
     backgroundColor: '#1976d2',
     height: '90%',
-    width: '40%',
+    width: '45%',
     border: '1.5px solid #05417e',
     zIndex: 100,
     borderRadius: '5px',
@@ -32,7 +33,7 @@ export default makeStyles(() => ({
       border: 0,
       height: '100%',
       width: '100%',
-      fontSize: '17px',
+      fontSize: '12px',
       '&::placeholder': {
         color: 'white',
       },

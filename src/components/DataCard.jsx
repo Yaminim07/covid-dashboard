@@ -2,11 +2,12 @@ import React from 'react';
 import { Typography, Grid } from '@mui/material';
 import PropTypes from 'prop-types';
 
-function DataCard(props) {
-  const {
-    title, numericData, iconElement, className,
-  } = props;
+import useStyles from '../Ui/GlobalData';
 
+function DataCard({
+  title, numericData, iconElement, className, styleType,
+}) {
+  const classes = useStyles();
   return (
     <Grid
       container
@@ -24,7 +25,7 @@ function DataCard(props) {
           </Typography>
         </Grid>
         <Grid>
-          <Typography color="text.secondary" gutterBottom>
+          <Typography color="text.secondary" gutterBottom className={`${classes.numeric_data_count} ${styleType}`}>
             {numericData}
           </Typography>
         </Grid>
@@ -39,8 +40,9 @@ function DataCard(props) {
 DataCard.propTypes = {
   title: PropTypes.string,
   numericData: PropTypes.number,
-  iconElement: PropTypes.string,
+  iconElement: PropTypes.instanceOf(Object),
   className: PropTypes.string,
+  styleType: PropTypes.string,
 }
 
 export default DataCard;

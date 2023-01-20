@@ -14,3 +14,12 @@ code {
     monospace;
 }
 
+.active {
+  color: #ff8a04 ! important;
+}
+.recovered {
+  color: #2f8d1a ! important;
+}
+.death {
+  color: #ff0000 ! important;
+}

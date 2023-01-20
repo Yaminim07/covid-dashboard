@@ -3,26 +3,35 @@ import { makeStyles } from '@mui/styles';
 export default makeStyles(() => ({
   bar_chart: {
     width: '40%',
-    minWidth: '900px',
-    padding: '10px',
+    minWidth: '500px',
     border: '1px solid black',
+    display: 'flex',
+    margin: 'auto',
   },
   chart_container: {
-    padding: '50px 0',
+    padding: '10px 0',
     display: 'flex',
     flexWrap: 'wrap',
+    gap: '10px',
     justifyContent: 'space-around',
+  },
+  title: {
+    textAlign: 'left',
+    padding: '12px 0 0 0',
+    margin: '0 30px',
+    fontWeight: '400',
+    fontSize: '19px',
   },
 }));
 
 export const backgroundColorArr = [
-  '#fc305c33',
-  '#ff9f4033',
-  '#ffcd5633',
-  '#4bc0c033',
-  '#36a2eb33',
-  'rgba(153, 102, 255, 0.2)',
-  '#c9cbcf33',
+  '#fe4b72',
+  '#fb9126',
+  '#ffcd56',
+  '#4bc0c0',
+  '#fe4b72',
+  '#9966ff',
+  '#c9cbcf',
 ];
 
 export const borderColorArr = [
@@ -30,7 +39,28 @@ export const borderColorArr = [
   '#fb9126',
   '#ffcd56',
   '#4bc0c0',
-  '#36a2eb',
+  '#fe4b72',
+  '#9966ff',
+  '#c9cbcf',
+];
+
+// '#ff0000be',
+export const backgroundColorArr2 = [
+  '#fe4b72',
+  '#ff0000be',
+  '#ffcd56',
+  '#4bc0c0',
+  '#fe4b72',
+  '#9966ff',
+  '#c9cbcf',
+];
+
+export const borderColorArr2 = [
+  '#fe4b72',
+  '#ff0000be',
+  '#ffcd56',
+  '#4bc0c0',
+  '#fe4b72',
   '#9966ff',
   '#c9cbcf',
 ];

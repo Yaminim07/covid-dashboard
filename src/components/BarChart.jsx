@@ -12,18 +12,22 @@ function BarChart({ passData }) {
   const options = {
     plugins: {
       legend: {
-          labels: {
-              // This more specific font property overrides the global property
-              font: {
-                  size: 20
-              }
-          }
-      }
+        labels: {
+            font: {
+                size: 17
+            }
+        }
+      },
+      
   },
     scales: {
       y: {
         beginAtZero: true,
-      }
+        font: {
+          size: 10
+       }
+      },
+      
     }
   };
   return (

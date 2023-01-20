@@ -24,6 +24,7 @@ function GlobalData() {
             numericData={data?.globalTotal?.active}
             iconElement={<CoronavirusIcon />}
             className={classes.total_data_card}
+            styleType="active"
           />
           <DataCard
             className={classes.total_data_card}
@@ -31,12 +32,14 @@ function GlobalData() {
             numericData={data?.globalTotal?.deaths}
             iconElement={<CoronavirusIcon sx={{ color: 'red' }} />}
             textColor="red"
+            styleType="death"
           />
           <DataCard
             className={classes.total_data_card}
             title="Recovered"
             numericData={data?.globalTotal?.recovered}
             iconElement={<PeopleIcon sx={{ color: 'green' }} />}
+            styleType="recovered"
           />
         </Box>
       </Box>
@@ -44,7 +47,7 @@ function GlobalData() {
   }
 
   return (
-    <div>Show data</div>
+    <div className={classes.wrapper}>Loading...</div>
   )
 }
 
