@@ -16,9 +16,10 @@ code {
   justify-content: center;
 }
 .ag-theme-alpine {
-  height: 80vh;
-  width: 80vw;
+  width: 100%;
+  height: 100%;
   margin: auto;
+  padding: 12px 30px 0px 0px;
 }
 .appBarToolBar {
   display: flex;
