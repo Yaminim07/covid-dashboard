@@ -2,8 +2,8 @@ import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
   bar_chart: {
-    width: '40%',
-    minWidth: '500px',
+    width: '90%',
+    maxWidth: '500px',
     border: '1px solid black',
     display: 'flex',
     margin: 'auto',
@@ -46,7 +46,7 @@ export const borderColorArr = [
 
 // '#ff0000be',
 export const backgroundColorArr2 = [
-  '#fe4b72',
+  '#ffeb3b',
   '#ff0000be',
   '#ffcd56',
   '#4bc0c0',
@@ -56,7 +56,7 @@ export const backgroundColorArr2 = [
 ];
 
 export const borderColorArr2 = [
-  '#fe4b72',
+  '#ffeb3b',
   '#ff0000be',
   '#ffcd56',
   '#4bc0c0',

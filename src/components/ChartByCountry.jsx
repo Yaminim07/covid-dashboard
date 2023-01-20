@@ -5,7 +5,9 @@ import { useQuery } from 'react-query';
 import { GET_COUNTRY } from '../helper/queries';
 import fetchData from '../helper/queryHelper';
 import BarChart from './BarChart';
-import useStyles, { backgroundColorArr, backgroundColorArr2, borderColorArr } from '../Ui/ChartByCountry';
+import useStyles, {
+  backgroundColorArr, backgroundColorArr2, borderColorArr, borderColorArr2,
+} from '../Ui/ChartByCountry';
 import { CountryState } from '../Context/CountryContext';
 
 function ChartByCountry() {
@@ -35,7 +37,7 @@ function ChartByCountry() {
         label: 'Active Cases Based',
         data: [rs.active, rs.critical, rs.todayCases],
         backgroundColor: backgroundColorArr2,
-        borderColor: borderColorArr,
+        borderColor: borderColorArr2,
         borderWidth: 1,
       }],
     }
