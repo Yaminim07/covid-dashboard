@@ -1,4 +1,5 @@
 import React from 'react';
+import CountryGrid from './components/CountryGrid';
 
 import GlobalData from './components/GlobalData';
 import Navbar from './components/Navbar';
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <GlobalData />
       <ChartByCountry />
+      <CountryGrid />
     </div>
   );
 }
