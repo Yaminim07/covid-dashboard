@@ -8,6 +8,5 @@ const graphQLClient = new GraphQLClient(API_ENDPOINT, {
   },
 });
 
-const fetchData = (query) => async () => graphQLClient.request(gql`${query}`);
-
-export default fetchData;
+export const fetchData = (query) => async () => graphQLClient.request(gql`${query}`);
+export const fetchAllCountry = (query) => async () => graphQLClient.request(gql`${query}`);
