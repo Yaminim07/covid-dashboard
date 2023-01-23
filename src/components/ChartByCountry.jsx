@@ -42,7 +42,7 @@ function ChartByCountry() {
     }
 
     return (
-      <div className="wrapper">
+      <div className={classes.wrapper}>
         <h2 className={classes.title}>
           Country:
           {countryState.toUpperCase()}
