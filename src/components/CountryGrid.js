@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
 import {
   TextField, Box, AppBar, Toolbar, Typography, InputAdornment, Avatar,
@@ -8,13 +7,14 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { AgGridReact } from 'ag-grid-react';
 import { useQuery } from 'react-query';
-import { fetchData } from '../helper/queryHelper';
+
+import fetchData from '../helper/queryHelper';
 import { COUNTRY_DATA_QUERY } from '../helper/queries';
 
-const flagImage = (params) => (<Avatar src={params.value} variant="rounded" className="flag" />)
+const flagImage = (params) => (<Avatar src={params.value} variant="rounded" className="flag" />);
+
 function CountryGrid() {
   const [gridApi, setGridApi] = useState(null);
-  // const [gridColumnApi, setGridColumnApi] = useState(null);
   const [rowData, setRowData] = useState([{}]);
   const [columnDefs] = useState([
     {
@@ -62,10 +62,8 @@ function CountryGrid() {
   const onGridReady = (params) => {
     setGridApi(params.api);
     params.api.sizeColumnsToFit();
-    // setGridColumnApi(params.columnApi)
   };
 
-  // access API from callback params object
   const sendToClipboard = (e) => {
     e.api.sizeColumnsToFit();
     e.columnApi.resetColumnState();
