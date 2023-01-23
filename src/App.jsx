@@ -6,6 +6,8 @@ import CountryGrid from './components/CountryGrid';
 import GlobalData from './components/GlobalData';
 import Navbar from './components/Navbar';
 import ChartByCountry from './components/ChartByCountry';
+import ErrorPage from './components/ErrorPage';
+import { CountryState } from './Context/CountryContext';
 
 const useStyles = makeStyles(() => ({
   bodyContainer: {
@@ -15,7 +17,14 @@ const useStyles = makeStyles(() => ({
 ));
 
 function App() {
+  const [, , err, , message] = CountryState();
+
   const classes = useStyles();
+  if (err) {
+    return (
+      <ErrorPage err={message} />
+    )
+  }
   return (
     <div className="App">
       <Navbar />
