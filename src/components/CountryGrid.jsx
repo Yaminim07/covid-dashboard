@@ -7,11 +7,13 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import { AgGridReact } from 'ag-grid-react';
 import { useQuery } from 'react-query';
+
 import fetchData from '../helper/queryHelper';
 import { COUNTRY_DATA_QUERY } from '../helper/queries';
 import useStyles from '../Ui/CountryGrid';
 
-const flagImage = (params) => (<Avatar src={params.value} variant="rounded" className="flag" />)
+const flagImage = (params) => (<Avatar src={params.value} variant="rounded" className="flag" />);
+
 function CountryGrid() {
   const classes = useStyles();
   const [gridApi, setGridApi] = useState(null);
@@ -64,7 +66,6 @@ function CountryGrid() {
     params.api.sizeColumnsToFit();
   };
 
-  // access API from callback params object
   const sendToClipboard = (e) => {
     e.api.sizeColumnsToFit();
     e.columnApi.resetColumnState();
