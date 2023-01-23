@@ -7,5 +7,8 @@ export default makeStyles(() => ({
   gridBody: {
     height: '90%',
   },
+  wrapper: {
+    height: '100%',
+  },
 }
 ));

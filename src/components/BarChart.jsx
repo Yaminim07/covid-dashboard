@@ -37,7 +37,7 @@ function BarChart({ passData }) {
 }
 
 BarChart.propTypes = {
-  passData: PropTypes.instanceOf(Object),
+  passData: PropTypes.instanceOf(Array),
 }
 
 export default BarChart;
