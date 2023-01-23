@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
 ));
 
 function App() {
-  const [, , err, , message] = CountryState();
+  const { err, message } = CountryState();
 
   const classes = useStyles();
   if (err) {

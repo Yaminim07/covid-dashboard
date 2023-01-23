@@ -10,7 +10,8 @@ import useStyles, {
 import { CountryState } from '../Context/CountryContext';
 
 function ChartByCountry() {
-  const [countryState, , , handleError] = CountryState();
+  const { countryState, handleError } = CountryState();
+  // console.log(CountryState());
 
   const {
     data, isSuccess, isError, error,

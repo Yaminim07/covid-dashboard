@@ -11,7 +11,7 @@ import useStyles from '../Ui/GlobalData';
 import { CountryState } from '../Context/CountryContext';
 
 function GlobalData() {
-  const [, , , handleError] = CountryState();
+  const { handleError } = CountryState();
 
   const {
     data, isSuccess, isError, error,

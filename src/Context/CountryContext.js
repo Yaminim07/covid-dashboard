@@ -19,13 +19,13 @@ function Context({ children }) {
     setCountry(country)
   };
 
-  const contextValue = useMemo(() => ([
+  const contextValue = useMemo(() => ({
     countryState,
     handleCountry,
     err,
     handleError,
     message,
-  ]), [countryState, err, message]);
+  }), [countryState, err, message]);
 
   return <Country.Provider value={contextValue}>{children}</Country.Provider>;
 }
