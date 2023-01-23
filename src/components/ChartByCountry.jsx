@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
 import { useQuery } from 'react-query';
 
@@ -13,12 +12,12 @@ import { CountryState } from '../Context/CountryContext';
 function ChartByCountry() {
   const [countryState] = CountryState();
 
-  const { data, isSuccess, isError } = useQuery(['country-data', countryState], fetchData(GET_COUNTRY, { code: countryState }), { staleTime: 86400000 });
+  const { data, isSuccess } = useQuery(['country-data', countryState], fetchData(GET_COUNTRY, { code: countryState }), { staleTime: 86400000 });
 
   const classes = useStyles();
 
   if (isSuccess) {
-    const rs = data.country.result;
+    const rs = data?.country?.result;
 
     const tableOne = {
       labels: ['population', 'tests', 'cases', 'recovered', 'deaths'],
@@ -43,7 +42,7 @@ function ChartByCountry() {
     }
 
     return (
-      <div className="wrapper">
+      <div className={classes.wrapper}>
         <h2 className={classes.title}>
           Country:
           {countryState.toUpperCase()}

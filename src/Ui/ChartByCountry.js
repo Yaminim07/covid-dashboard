@@ -2,8 +2,8 @@ import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
   bar_chart: {
-    width: '90%',
-    maxWidth: '500px',
+    width: '95%',
+    height: '40%',
     border: '1px solid black',
     display: 'flex',
     margin: 'auto',
@@ -14,6 +14,7 @@ export default makeStyles(() => ({
     flexWrap: 'wrap',
     gap: '10px',
     justifyContent: 'space-around',
+    height: '95%',
   },
   title: {
     textAlign: 'left',
@@ -21,6 +22,10 @@ export default makeStyles(() => ({
     margin: '0 30px',
     fontWeight: '400',
     fontSize: '19px',
+    height: '5%',
+  },
+  wrapper: {
+    height: '100%',
   },
 }));
 
