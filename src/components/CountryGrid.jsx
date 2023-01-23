@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TextField, Box, AppBar, Toolbar, Typography, InputAdornment, Avatar,
 } from '@mui/material';
@@ -15,11 +15,12 @@ const flagImage = (params) => (<Avatar src={params.value} variant="rounded" clas
 
 function CountryGrid() {
   const classes = useStyles();
-
   const [gridApi, setGridApi] = useState(null);
-  const columnDefs = [
+  const [rowData, setRowData] = useState([{}]);
+  const [columnDefs] = useState([
     {
       field: 'country',
+      resizable: 'true',
     },
     {
       field: 'flag',

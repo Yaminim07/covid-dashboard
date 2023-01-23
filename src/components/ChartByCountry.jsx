@@ -10,11 +10,18 @@ import useStyles, {
 import { CountryState } from '../Context/CountryContext';
 
 function ChartByCountry() {
-  const [countryState] = CountryState();
+  const { countryState, handleError } = CountryState();
+  // console.log(CountryState());
 
-  const { data, isSuccess } = useQuery(['country-data', countryState], fetchData(GET_COUNTRY, { code: countryState }), { staleTime: 86400000 });
+  const {
+    data, isSuccess, isError, error,
+  } = useQuery(['country-data', countryState], fetchData(GET_COUNTRY, { code: countryState }), { staleTime: 86400000 });
 
   const classes = useStyles();
+
+  if (isError) {
+    handleError(error.response.errors[0].message);
+  }
 
   if (isSuccess) {
     const rs = data?.country?.result;

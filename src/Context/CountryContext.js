@@ -7,14 +7,25 @@ const Country = createContext();
 
 function Context({ children }) {
   const [countryState, setCountry] = useState('INDIA');
+  const [err, setError] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleError = (errMessage) => {
+    setError(true);
+    setMessage(errMessage);
+  };
 
   const handleCountry = (country) => {
     setCountry(country)
-  }
-  const contextValue = useMemo(() => ([
+  };
+
+  const contextValue = useMemo(() => ({
     countryState,
     handleCountry,
-  ]), [countryState]);
+    err,
+    handleError,
+    message,
+  }), [countryState, err, message]);
 
   return <Country.Provider value={contextValue}>{children}</Country.Provider>;
 }

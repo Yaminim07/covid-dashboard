@@ -8,8 +8,8 @@ import useStyles from '../Ui/Navbar';
 import { CountryState } from '../Context/CountryContext';
 
 function Navbar() {
-  const [_, handleCountry] = CountryState();
-  const [searchInput, setSearchInput] = useState('')
+  const { handleCountry } = CountryState();
+  const [searchInput, setSearchInput] = useState('');
 
   const classes = useStyles();
 
