@@ -8,11 +8,20 @@ import { GLOBAL_DATA_QUERY } from '../helper/queries';
 
 import DataCard from './DataCard';
 import useStyles from '../Ui/GlobalData';
+import { CountryState } from '../Context/CountryContext';
 
 function GlobalData() {
-  const { data, isSuccess } = useQuery('global-data', fetchData(GLOBAL_DATA_QUERY), { staleTime: 200000 });
+  const { handleError } = CountryState();
+
+  const {
+    data, isSuccess, isError, error,
+  } = useQuery('global-data', fetchData(GLOBAL_DATA_QUERY), { staleTime: 200000 });
 
   const classes = useStyles();
+
+  if (isError) {
+    handleError(error.response.errors[0].message);
+  }
 
   if (isSuccess) {
     return (
