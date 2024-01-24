@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { gql } from 'graphql-request';
 
 const GLOBAL_DATA_QUERY = `{

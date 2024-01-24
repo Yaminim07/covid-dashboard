@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { GraphQLClient, gql } from 'graphql-request';
 
 const API_ENDPOINT = 'https://covid19-graphql.netlify.app/';
