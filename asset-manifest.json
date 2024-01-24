@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/covid-dashboard/static/css/main.34e8ba1b.css",
-    "main.js": "/covid-dashboard/static/js/main.dbf177d2.js",
+    "main.css": "/covid-dashboard/static/css/main.f855e6bc.css",
+    "main.js": "/covid-dashboard/static/js/main.c518f9f5.js",
+    "static/js/787.13816cc3.chunk.js": "/covid-dashboard/static/js/787.13816cc3.chunk.js",
+    "static/media/logo.svg": "/covid-dashboard/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/covid-dashboard/index.html",
-    "main.34e8ba1b.css.map": "/covid-dashboard/static/css/main.34e8ba1b.css.map",
-    "main.dbf177d2.js.map": "/covid-dashboard/static/js/main.dbf177d2.js.map"
+    "main.f855e6bc.css.map": "/covid-dashboard/static/css/main.f855e6bc.css.map",
+    "main.c518f9f5.js.map": "/covid-dashboard/static/js/main.c518f9f5.js.map",
+    "787.13816cc3.chunk.js.map": "/covid-dashboard/static/js/787.13816cc3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34e8ba1b.css",
-    "static/js/main.dbf177d2.js"
+    "static/css/main.f855e6bc.css",
+    "static/js/main.c518f9f5.js"
   ]
 }
